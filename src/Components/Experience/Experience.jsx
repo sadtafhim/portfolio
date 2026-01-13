@@ -65,7 +65,7 @@ const Experience = () => {
                             <ul className="space-y-4">
                                 {exp.tasks.map((task, i) => (
                                     <li key={i} className="flex items-start gap-3 text-slate-300 text-sm">
-                                        <CheckCircle2 className="text-indigo-500 mt-1 flex-shrink-0" size={16} />
+                                        <CheckCircle2 className="text-indigo-500 mt-1 shrink-0" size={16} />
                                         <span>{task}</span>
                                     </li>
                                 ))}

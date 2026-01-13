@@ -4,6 +4,8 @@ import AboutMe from '../../AboutMe/AboutMe';
 import Skills from '../../Skills/Skills';
 import Education from '../../Education/Education';
 import Experience from '../../Experience/Experience';
+import Projects from '../../Projects/Projects';
+import Contact from '../../Contact/Contact';
 
 const HomePage = () => {
     return (
@@ -22,6 +24,12 @@ const HomePage = () => {
             </div>
             <div>
                 <Experience></Experience>
+            </div>
+            <div>
+                <Projects></Projects>
+            </div>
+            <div>
+                <Contact></Contact>
             </div>
         </div>
     );

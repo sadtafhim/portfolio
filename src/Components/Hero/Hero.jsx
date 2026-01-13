@@ -1,5 +1,6 @@
 import React from 'react';
 import { Github, Linkedin, Mail, FileText } from 'lucide-react';
+import img from "../../assets/Sad Md. Tafhim_chatgpt_portfolio.png"
 
 const Hero = () => {
     const handleCopyEmail = () => {
@@ -62,7 +63,7 @@ const Hero = () => {
 
                             <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-slate-800 p-2 bg-slate-900">
                                 <img
-                                    src="/your-photo.jpg"
+                                    src={img}
                                     alt="Sad Md. Tafhim"
                                     className="w-full h-full object-cover rounded-xl"
                                 />
