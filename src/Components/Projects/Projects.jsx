@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Github, ExternalLink, X, ChevronRight, CheckCircle2, Rocket } from 'lucide-react';
+import warmpaws from "../../assets/warmpaws.png"
+import habit from "../../assets/HabitTracker.png"
+import eTuitionBD from "../../assets/eTuitionBD.png"
 
 const Projects = () => {
     const [selectedProject, setSelectedProject] = useState(null);
@@ -9,35 +12,35 @@ const Projects = () => {
         {
             id: 1,
             name: "Habit-Tracker (Full Stack)",
-            image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=2072&auto=format&fit=crop",
+            image: habit,
             tech: ["React", "Node JS", "Express JS", "MongoDB", "Firebase"],
             description: "A personalized habit-building application designed to help users track daily streaks and manage routines effectively. It features secure authentication and real-time progress updates.",
             github: "https://github.com/sadtafhim/B12-A10-Habit-Tracker-Client",
-            live: "https://habit-tracker-v2.vercel.app/",
+            live: "https://habit-tracker-9e59c.web.app/",
             challenges: "Managing complex state for daily streaks and ensuring high-performance data synchronization between the client and MongoDB without lag.",
             future: "Integrating push notifications for daily reminders and adding a social dashboard to compete with friends on habit milestones."
         },
         {
             id: 2,
             name: "WarmPaws - Pet Care",
-            image: "https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?q=80&w=2070&auto=format&fit=crop",
+            image: warmpaws,
             tech: ["React", "Tailwind CSS", "DaisyUI", "Firebase"],
             description: "A dedicated platform for animal welfare and pet adoption. It allows users to browse available pets and provides an administrative interface for managing shelter listings.",
             github: "https://github.com/sadtafhim/B12-A09-WarmPaws",
-            live: "https://warmpaws-pet-care.web.app/",
+            live: "https://warm-paws-fdeab.web.app/",
             challenges: "Designing a compassionate and intuitive UI while handling complex image uploads for pet profiles across multiple categories.",
             future: "Adding a map-based shelter locator and an AI-driven matching system to suggest pets based on user lifestyle."
         },
         {
             id: 3,
-            name: "Green Earth PlantShop",
-            image: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=2070&auto=format&fit=crop",
-            tech: ["JavaScript", "Tailwind CSS", "DaisyUI", "HTML5"],
-            description: "An aesthetic e-commerce interface for indoor plants. It emphasizes interactive product filtering and a seamless shopping experience for plant enthusiasts.",
-            github: "https://github.com/sadtafhim/Assignment6-Green-Earth",
-            live: "https://green-earth-shop.netlify.app/",
-            challenges: "Optimizing the high-resolution plant imagery for fast load times and implementing smooth CSS transitions for the product filtering logic.",
-            future: "Transitioning the project to a full React application with a backend to handle real-time inventory management."
+            name: "eTuitionBD - Online Tutor Booking",
+            image: eTuitionBD,
+            tech: ["React", "Node JS", "Express JS", "MongoDB", "Firebase"],
+            description: "A comprehensive platform designed to bridge the gap between students and qualified tutors. It features an interactive booking system, tutor profiles, and a secure review management interface.",
+            github: "https://github.com/sadtafhim/b12-a11-eTuitionBD",
+            live: "https://e-tuition-bd-a9f09.web.app/",
+            challenges: "Developing a robust tutor-student matching system and managing dynamic review states while ensuring seamless real-time data updates from the MongoDB backend.",
+            future: "Implementing a direct messaging system between tutors and students, alongside a virtual white-board integration for remote learning sessions."
         }
     ];
 
