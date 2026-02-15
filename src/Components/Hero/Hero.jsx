@@ -47,7 +47,7 @@ const Hero = () => {
                                 <Mail size={20} />
                             </button>
                             <a
-                                href="/src/assets/Sad_Md_Tafhim_CV.pdf"
+                                href="/Sad_Md_Tafhim_CV.pdf"
                                 download="Sad_Md_Tafhim_CV.pdf"
                             >
                                 <button className="flex items-center gap-2 px-6 py-3 bg-slate-100 text-slate-950 font-bold rounded-lg hover:bg-indigo-500 hover:text-white transition-all">
