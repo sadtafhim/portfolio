@@ -10,7 +10,7 @@ const Projects = () => {
     const projectData = [
         {
             id: 1,
-            name: "Habit-Tracker (Full Stack)",
+            name: "Habit-Tracker - Habit Tracking Website (Full Stack)",
             image: habit,
             tech: ["React", "Node JS", "Express JS", "MongoDB", "Firebase"],
             description: "A personalized habit-building application designed to help users track daily streaks and manage routines effectively. It features secure authentication and real-time progress updates.",
@@ -32,7 +32,7 @@ const Projects = () => {
         },
         {
             id: 3,
-            name: "eTuitionBD - Online Tutor Booking",
+            name: "eTuitionBD - Online Tutor Booking (Full Stack)",
             image: eTuitionBD,
             tech: ["React", "Node JS", "Express JS", "MongoDB", "Firebase"],
             description: "A comprehensive platform designed to bridge the gap between students and qualified tutors. It features an interactive booking system, tutor profiles, and a secure review management interface.",

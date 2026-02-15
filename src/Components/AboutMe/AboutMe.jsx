@@ -34,13 +34,13 @@ const AboutMe = () => {
                         <div className="p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-indigo-500 transition-colors">
                             <BookOpen className="text-indigo-500 mb-3" size={28} />
                             <h4 className="text-white font-bold mb-1">Education</h4>
-                            <p className="text-sm text-slate-400">B.Sc. Computer Science<br />BRAC University</p>
+                            <p className="text-sm text-slate-400">B.Sc. Computer Science<br />BRAC University<br /> CGPA: 3.65 </p>
                         </div>
 
                         <div className="p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-indigo-500 transition-colors">
                             <Award className="text-indigo-500 mb-3" size={28} />
                             <h4 className="text-white font-bold mb-1">Research</h4>
-                            <p className="text-sm text-slate-400">IEEE Publication<br />Lung Cancer Detection</p>
+                            <p className="text-sm text-slate-400">IEEE Publication<br />Lung Cancer Detection Using Machine Learning Techniques</p>
                         </div>
 
                         <div className="p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-indigo-500 transition-colors">

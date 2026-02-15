@@ -18,7 +18,7 @@ const Experience = () => {
         {
             company: "The Tech Lab",
             role: "STEM Teacher - Project Oporajita",
-            duration: "December 2023 - Present",
+            duration: "December 2023 - May 2025",
             description: "Designing educational resources and raising societal awareness.",
             tasks: [
                 "Delivered engaging educational resources on STEM, Robotics, and Safe Tech.",

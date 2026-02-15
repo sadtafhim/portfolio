@@ -1,104 +1,158 @@
-import React from 'react';
-import { Mail, Phone, MessageCircle, MapPin, Send, Linkedin, Github } from 'lucide-react';
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2'; // Import SweetAlert2
+import { Mail, Phone, MessageCircle, Send } from 'lucide-react';
 
 const Contact = () => {
-    // Your details from the provided records
+    const formRef = useRef();
+    const [loading, setLoading] = useState(false);
+
     const contactInfo = {
         email: "tafhim.sad@gmail.com",
         phone: "01882143108",
         whatsapp: "+8801882143108",
-        linkedin: "https://www.linkedin.com/in/sad-md-tafhim-97a717161/",
-        github: "https://github.com/sadtafhim",
         location: "Dhaka, Bangladesh"
+    };
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+        setLoading(true);
+
+        emailjs.sendForm(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            formRef.current,
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        )
+            .then(() => {
+                setLoading(false);
+                // Success SweetAlert
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Message Sent!',
+                    text: 'Thank you for reaching out. I will get back to you shortly.',
+                    background: '#0f172a', // Matches your slate-950
+                    color: '#f1f5f9',
+                    confirmButtonColor: '#4f46e5',
+                    iconColor: '#10b981',
+                    customClass: {
+                        popup: 'rounded-[2rem] border border-slate-800'
+                    }
+                });
+                e.target.reset();
+            })
+            .catch((error) => {
+                setLoading(false);
+                console.error(error);
+                // Error SweetAlert
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong! Please try again later.',
+                    background: '#0f172a',
+                    color: '#f1f5f9',
+                    confirmButtonColor: '#ef4444',
+                    customClass: {
+                        popup: 'rounded-[2rem] border border-slate-800'
+                    }
+                });
+            });
     };
 
     return (
         <section id="contact" className="py-20 bg-slate-950 relative overflow-hidden">
-            {/* Subtle Background Graphic */}
-            <div
-                className="absolute inset-0 opacity-5 pointer-events-none"
-                style={{
-                    backgroundImage: 'radial-gradient(#6366f1 1px, transparent 1px)',
-                    backgroundSize: '30px 30px'
-                }}
-            ></div>
-
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Let's Connect</h2>
-                    <p className="text-slate-400 max-w-lg mx-auto">
-                        Currently open to Web Development opportunities and research collaborations.
-                    </p>
-                    <div className="h-1 w-20 bg-indigo-500 mx-auto mt-4 rounded-full"></div>
-                </div>
-
                 <div className="grid lg:grid-cols-2 gap-12 items-start">
 
-                    {/* Contact Methods Cards */}
-                    <div className="space-y-6">
-                        <h3 className="text-2xl font-bold text-white mb-6">Contact Details</h3>
+                    {/* Left: Contact Info */}
+                    <div className="space-y-8">
+                        <div>
+                            <h3 className="text-3xl font-bold text-white mb-2">Let's connect</h3>
+                            <p className="text-slate-400 max-w-md">
+                                Have a project in mind or just want to say hi? I typically respond within 24 hours.
+                            </p>
+                        </div>
 
-                        {/* Email */}
-                        <a href={`mailto:${contactInfo.email}`} className="flex items-center gap-5 p-6 bg-slate-900 border border-slate-800 rounded-2xl hover:border-indigo-500 transition-all group">
-                            <div className="p-3 bg-indigo-500/10 text-indigo-400 rounded-xl group-hover:bg-indigo-500 group-hover:text-white transition-colors">
-                                <Mail size={24} />
-                            </div>
-                            <div>
-                                <p className="text-xs text-slate-500 uppercase font-bold tracking-widest">Email Me</p>
-                                <p className="text-lg text-slate-200 font-medium">{contactInfo.email}</p>
-                            </div>
-                        </a>
-
-                        {/* Phone */}
-                        <a href={`tel:${contactInfo.phone}`} className="flex items-center gap-5 p-6 bg-slate-900 border border-slate-800 rounded-2xl hover:border-emerald-500 transition-all group">
-                            <div className="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl group-hover:bg-emerald-500 group-hover:text-white transition-colors">
-                                <Phone size={24} />
-                            </div>
-                            <div>
-                                <p className="text-xs text-slate-500 uppercase font-bold tracking-widest">Call Me</p>
-                                <p className="text-lg text-slate-200 font-medium">{contactInfo.phone}</p>
-                            </div>
-                        </a>
-
-                        {/* WhatsApp */}
-                        <a
-                            href={`https://wa.me/${contactInfo.whatsapp}`}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="flex items-center gap-5 p-6 bg-slate-900 border border-slate-800 rounded-2xl hover:border-green-500 transition-all group"
-                        >
-                            <div className="p-3 bg-green-500/10 text-green-400 rounded-xl group-hover:bg-green-500 group-hover:text-white transition-colors">
-                                <MessageCircle size={24} />
-                            </div>
-                            <div>
-                                <p className="text-xs text-slate-500 uppercase font-bold tracking-widest">WhatsApp</p>
-                                <p className="text-lg text-slate-200 font-medium">Message on WhatsApp</p>
-                            </div>
-                        </a>
+                        <div className="space-y-4">
+                            <a href={`mailto:${contactInfo.email}`} className="group flex items-center gap-6 p-6 bg-slate-900/50 border border-slate-800 rounded-3xl hover:border-indigo-500/50 transition-all">
+                                <div className="p-3 bg-indigo-500/10 rounded-2xl group-hover:bg-indigo-500/20 transition-colors">
+                                    <Mail className="text-indigo-400" size={28} />
+                                </div>
+                                <div>
+                                    <p className="text-sm font-medium text-slate-500 uppercase tracking-wider">Email me</p>
+                                    <p className="text-lg text-slate-200 font-medium">{contactInfo.email}</p>
+                                </div>
+                            </a>
+                            <a href={`https://wa.me/${contactInfo.whatsapp}`} target="_blank" rel="noreferrer" className="group flex items-center gap-6 p-6 bg-slate-900/50 border border-slate-800 rounded-3xl hover:border-emerald-500/50 transition-all">
+                                <div className="p-3 bg-emerald-500/10 rounded-2xl group-hover:bg-emerald-500/20 transition-colors">
+                                    <MessageCircle className="text-emerald-400" size={28} />
+                                </div>
+                                <div>
+                                    <p className="text-sm font-medium text-slate-500 uppercase tracking-wider">WhatsApp</p>
+                                    <p className="text-lg text-slate-200 font-medium">Chat Now</p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
 
-                    {/* Quick Contact Form */}
-                    <div className="bg-slate-900 border border-slate-800 p-8 rounded-4xl shadow-2xl">
-                        <form className="space-y-4">
-                            <div className="grid md:grid-cols-2 gap-4">
+                    {/* Right: The Form */}
+                    <div className="bg-slate-900 border border-slate-800 p-8 rounded-[2.5rem] shadow-2xl">
+                        <p className="text-white font-bold text-xl pb-5">
+                            Contact Me Directly
+                        </p>
+                        <form ref={formRef} onSubmit={sendEmail} className="space-y-5">
+                            <div className="grid md:grid-cols-2 gap-5">
                                 <div className="space-y-2">
-                                    <label className="text-sm text-slate-400 ml-1">Name</label>
-                                    <input type="text" className="w-full p-4 bg-slate-950 border border-slate-800 rounded-xl text-white focus:border-indigo-500 outline-none transition-all" placeholder="John Doe" />
+                                    <label className="text-xs font-bold text-slate-500 uppercase ml-1">Name</label>
+                                    <input
+                                        name="user_name"
+                                        type="text"
+                                        placeholder="Your Name"
+                                        required
+                                        className="w-full p-4 bg-slate-950 border border-slate-800 rounded-2xl text-white focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all"
+                                    />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-sm text-slate-400 ml-1">Email</label>
-                                    <input type="email" className="w-full p-4 bg-slate-950 border border-slate-800 rounded-xl text-white focus:border-indigo-500 outline-none transition-all" placeholder="john@example.com" />
+                                    <label className="text-xs font-bold text-slate-500 uppercase ml-1">Email</label>
+                                    <input
+                                        name="user_email"
+                                        type="email"
+                                        placeholder="email@example.com"
+                                        required
+                                        className="w-full p-4 bg-slate-950 border border-slate-800 rounded-2xl text-white focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all"
+                                    />
                                 </div>
                             </div>
+
                             <div className="space-y-2">
-                                <label className="text-sm text-slate-400 ml-1">Message</label>
-                                <textarea rows="4" className="w-full p-4 bg-slate-950 border border-slate-800 rounded-xl text-white focus:border-indigo-500 outline-none transition-all" placeholder="Hi Tafhim, let's talk about..."></textarea>
+                                <label className="text-xs font-bold text-slate-500 uppercase ml-1">Message</label>
+                                <textarea
+                                    name="message"
+                                    rows="4"
+                                    placeholder="Your Message"
+                                    required
+                                    minLength={10}
+                                    className="w-full p-4 bg-slate-950 border border-slate-800 rounded-2xl text-white focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all resize-none"
+                                ></textarea>
                             </div>
-                            <button className="w-full py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg shadow-indigo-500/20">
-                                <Send size={18} /> Send Message
+
+                            <button
+                                type="submit"
+                                disabled={loading}
+                                className="w-full py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-2xl flex items-center justify-center gap-3 transition-all active:scale-[0.98] disabled:opacity-50"
+                            >
+                                {loading ? (
+                                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                ) : (
+                                    <>
+                                        <span>Send Message</span>
+                                        <Send size={18} />
+                                    </>
+                                )}
                             </button>
                         </form>
                     </div>
+
                 </div>
             </div>
         </section>
