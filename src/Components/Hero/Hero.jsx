@@ -21,13 +21,15 @@ const Hero = () => {
                             Hi, I'm <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-cyan-400">Sad Md. Tafhim</span>
                         </h1>
                         <h3 className="text-xl md:text-2xl text-slate-400 mb-6 font-medium">
-                            Frontend Web Developer & Computer Science Graduate
+                            Full-Stack Web Developer & Computer Science Graduate
                         </h3>
                         <p className="text-slate-400 max-w-2xl mb-8 leading-relaxed">
-                            B.Sc. in Computer Science from BRAC University (CGPA 3.65).
-                            Specializing in building responsive web applications with React, Node JS,
-                            and Tailwind CSS. Experienced in IT support and STEM education.
+                            B.Sc. in Computer Science from <span className="text-indigo-400">BRAC University</span> with CGPA 3.65.
+                            Skilled in building full-stack web applications using React, Node.js, Express.js, MongoDB, and Tailwind CSS.
+                            Experienced in developing scalable backend services, creating responsive user interfaces, and providing IT support
+                            alongside contributing to STEM education initiatives.
                         </p>
+
 
                         {/* Social Links & Resume */}
                         <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-10">

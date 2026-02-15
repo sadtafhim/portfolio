@@ -15,9 +15,10 @@ const Footer = () => {
                             Tafhim<span className="text-indigo-500">.dev</span>
                         </h3>
                         <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-                            Frontend Web Developer and CS Graduate from BRAC University.
-                            Passionate about building functional, user-centric web applications and AI research.
+                            Full-Stack Web Developer and CS Graduate from <span className="text-indigo-400">:contentReference[oaicite:0]{index = 0}</span>.
+                            Passionate about building scalable, user-centric web applications, backend systems, and AI-driven solutions.
                         </p>
+
                     </div>
 
                     {/* Quick Navigation */}

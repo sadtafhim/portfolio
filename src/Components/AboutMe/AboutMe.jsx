@@ -15,11 +15,12 @@ const AboutMe = () => {
                     {/* Personality & Journey */}
                     <div className="space-y-6 text-slate-300 leading-relaxed">
                         <p>
-                            Hello! I'm <span className="text-white font-semibold">Sad Md. Tafhim</span>. My journey into the world of technology began with a deep curiosity for how digital systems solve real-world problems. This led me to pursue a B.Sc. in Computer Science at <span className="text-indigo-400">BRAC University</span>, where I maintained a CGPA of 3.65 and discovered my passion for frontend development and AI.
+                            Hello! I'm <span className="text-white font-semibold">Sad Md. Tafhim</span>. My journey into the world of technology began with a deep curiosity for how digital systems solve real-world problems. This led me to pursue a B.Sc. in Computer Science at <span className="text-indigo-400">BRAC University</span>, where I maintained a CGPA of 3.65 and developed a strong passion for building complete, scalable web applications—from intuitive user interfaces to robust backend systems and AI-driven solutions.
                         </p>
                         <p>
-                            I truly enjoy the "building" process—turning a blank screen into a functional, user-centric interface. Whether it's troubleshooting ERP systems during my time at <span className="text-white">United Hospitals Limited</span> or designing engaging STEM resources for <span className="text-white">The Tech Lab</span>, I find fulfillment in making technology accessible and efficient for everyone.
+                            I truly enjoy the entire development lifecycle—transforming ideas into fully functional, user-centric products. Whether it's troubleshooting ERP systems during my time at <span className="text-white">United Hospitals Limited</span> or designing and developing engaging STEM resources and digital platforms for <span className="text-white">The Tech Lab</span>, I find fulfillment in creating technology that is efficient, scalable, and accessible for everyone.
                         </p>
+
                         <p>
                             Beyond the code, I am a researcher at heart. I've co-authored a publication on <span className="italic text-slate-400 text-sm">"Lung Cancer Detection Using Machine Learning Methods"</span> and served as the Lead of Research for BRACU Ognibir. I believe that understanding the "why" is just as important as the "how."
                         </p>

@@ -27,7 +27,7 @@ const Contact = () => {
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Let's Connect</h2>
                     <p className="text-slate-400 max-w-lg mx-auto">
-                        Currently open to Frontend Developer opportunities and research collaborations.
+                        Currently open to Web Development opportunities and research collaborations.
                     </p>
                     <div className="h-1 w-20 bg-indigo-500 mx-auto mt-4 rounded-full"></div>
                 </div>

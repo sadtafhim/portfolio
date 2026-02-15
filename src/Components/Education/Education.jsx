@@ -9,7 +9,7 @@ const Education = () => {
             duration: "August 2020 - May 2025",
             result: "CGPA: 3.65",
             highlights: [
-                "Focus on Frontend Development and Machine Learning",
+                "Focus on Web Development and Machine Learning",
                 "Lead of Research at BRACU Ognibir",
                 "Co-authored published research in Lung Cancer Detection (IEEE)"
             ],
@@ -41,7 +41,7 @@ const Education = () => {
                             className="relative pl-8 border-l-2 border-slate-700 hover:border-indigo-500 transition-colors py-4 group"
                         >
                             {/* Timeline Dot */}
-                            <div className="absolute -left-[13px] top-6 w-6 h-6 bg-slate-900 border-2 border-slate-700 rounded-full group-hover:border-indigo-500 transition-colors flex items-center justify-center">
+                            <div className="absolute top-6 w-6 h-6 bg-slate-900 border-2 border-slate-700 rounded-full group-hover:border-indigo-500 transition-colors flex items-center justify-center">
                                 <div className="w-2 h-2 bg-indigo-500 rounded-full"></div>
                             </div>
 

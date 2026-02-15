@@ -7,7 +7,6 @@ import eTuitionBD from "../../assets/eTuitionBD.png"
 const Projects = () => {
     const [selectedProject, setSelectedProject] = useState(null);
 
-    // Data extracted from github.com/sadtafhim and your CV
     const projectData = [
         {
             id: 1,
